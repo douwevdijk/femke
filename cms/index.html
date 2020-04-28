@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="robots" content="noindex">
+
+    <title>Sqiffer Manager</title>
+
+    <base href="/cms/">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.12/angular-material.css" />
+
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,800&amp;display=swap" rel="stylesheet">
+
+    <script src="https://cdn.zinggrid.com/zinggrid.min.js" defer></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-aria.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.12/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+
+    <script src="js/moment.min.js"></script>
+
+    <script>
+
+        var config = {
+          apiKey: "AIzaSyD42H1mD-vUVPg-6OE6g22uiXjAZsoMKZ8",
+          databaseURL: 'https://im-ton-ramakers.firebaseio.com/',
+          storageBucket: 'gs://im-ton-ramakers.appspot.com/'
+        };
+
+        var root_db = firebase.initializeApp(config);
+        var dbService = firebase.database(root_db).ref();
+
+        var storage = firebase.storage().ref('/femke/')
+
+    </script>
+
+  </head>
+
+  <body layout="column">
+
+    <ng-view ng-if="$root.started && $root.auth"></ng-view>
+
+    <div ng-cloak ng-if="$root.started && !$root.auth" ng-controller="loginCtrl as login" style="height: 100vh;" layout="column" layout-align="center center" layout-fill="layout-fill">
+        <div style="padding: 0;" ayout="column" class="loginBox md-whiteframe-z1 col-xs-11 col-md-4">
+          <md-toolbar style="background: #000; color: #fff;">
+            <h2 class="md-toolbar-tools"><span>login</span></h2>
+          </md-toolbar>
+          <form name="loginForm">
+            <md-content layout="column" class="md-padding">
+              <md-input-container>
+                <label>Username</label>
+                <input required type="text" ng-model="login.loginModel.username" name="username" />
+                <div ng-messages="loginForm.username.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container>
+                <label>Password</label>
+                <input required type="password" ng-model="login.loginModel.password" name="password" />
+                <div ng-messages="loginForm.password.$error" role="alert">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <div layout="row" layout-align="center center">
+                <md-button ng-click="login.login()" style="width: 100%; background: #000; color: #fff;" class="md-raised md-primary">Login</md-button>
+              </div>
+            </md-content>
+          </form>
+        </div>
+      </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/resizeImage.js"></script>
+    <script src="build/public/html/templates.js"></script>
+
+  </body>
+</html>

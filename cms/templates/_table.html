@@ -1,0 +1,20 @@
+
+<div style="z-index: 500;" ng-class="{'processing': vm.processing}" class="bottom-sheet">One moment...</div><md-backdrop ng-if="vm.processing" class="md-sidenav-backdrop md-opaque md-default-theme md-sidenav-backdrop-custom disabled" ng-click="checkClosingForm()"></md-backdrop>
+
+<div style="flex: 0.5; background: #fff; z-index: 200; display: flex; position: fixed; width: 100%;" class="header">
+    <div class="flex" flex="25" layout-align="center center"><md-button ng-click="vm.back()" class="back-btn"><md-icon >arrow_back</md-icon>terug</md-button></div>
+    <div flex="50" class="flex" layout-align="center center"><span>{{vm.item.name}}</span></div>
+    <div flex="25" class="flex"><md-button ng-click="vm.save()" style="width: 70px;" class="md-raised md-warn"><md-icon>save</md-icon></md-button></div>
+</div>
+
+<div update-size="0" style="flex: 2; overflow-y: auto; overflow-x: hidden; margin-top: 48px;">
+    <div style="margin-top: 50px;" class="flex" layout-align="center center">
+        <form class="flex-70" name="form">
+            <md-input-container style="margin-top: 30px;" class="md-block flex-50">
+                <label>Tafel Naam</label>
+                <input style="font-family: inherit;" type="text" ng-model="vm.item.name">
+            </md-input-container>
+            <md-input-container class="md-block flex-35">
+        </form>
+    </div>
+</div>

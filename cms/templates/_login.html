@@ -1,0 +1,28 @@
+<div ng-cloak ng-if="$root.started && !$root.auth" ng-controller="loginCtrl as login" style="height: 100vh;" layout="column" layout-align="center center" layout-fill="layout-fill">
+    <div style="padding: 0;" ayout="column" class="loginBox md-whiteframe-z1 col-xs-11 col-md-4">
+        <md-toolbar style="background: #000; color: #fff;">
+        <h2 class="md-toolbar-tools"><span>login</span></h2>
+        </md-toolbar>
+        <form name="loginForm">
+        <md-content layout="column" class="md-padding">
+            <md-input-container>
+            <label>Username</label>
+            <input required type="text" ng-model="login.loginModel.username" name="username" />
+            <div ng-messages="loginForm.username.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
+            </md-input-container>
+            <md-input-container>
+            <label>Password</label>
+            <input required type="password" ng-model="login.loginModel.password" name="password" />
+            <div ng-messages="loginForm.password.$error" role="alert">
+                <div ng-message="required">This is required.</div>
+            </div>
+            </md-input-container>
+            <div layout="row" layout-align="center center">
+            <md-button ng-click="login.login()" style="width: 100%; background: #000; color: #fff;" class="md-raised md-primary">Login</md-button>
+            </div>
+        </md-content>
+        </form>
+    </div>
+</div>

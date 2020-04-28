@@ -1,0 +1,17 @@
+
+<div style="z-index: 500;" ng-class="{'processing': vm.processing}" class="bottom-sheet">One moment...</div><md-backdrop ng-if="vm.processing" class="md-sidenav-backdrop md-opaque md-default-theme md-sidenav-backdrop-custom disabled" ng-click="checkClosingForm()"></md-backdrop>
+
+<div style="background: #fff; height: 85px; z-index: 200; display: flex; position: fixed; width: 100%;" class="header">
+    <div class="flex" flex="25" layout-align="center center"><md-button ng-click="vm.back()" class="back-btn"><md-icon >arrow_back</md-icon>terug</md-button></div>
+    <div flex="50" class="flex" layout-align="center center"><span>TEKSTEN</span></div>
+    <div flex="25" style="align-items: center;" class="flex"><md-button ng-click="vm.save()" style="width: 110px;" class="md-primary"><md-icon style="font-size: 34px; width: 34px; height: 34px;" >save</md-icon></md-button></div>
+</div>
+
+<div update-size="0" style="overflow-y: auto; overflow-x: hidden; margin-top: 48px;">
+    <div style="margin-top: 50px;" class="flex" layout-align="center center">
+        <form style="position: relative;" class="flex-70" name="form">
+            <label style="width: 100%;" >Algemene tekst</label>
+            <div summernote="vm.summernote" has-changed="vm.hasChanged" settings="vm.settings.generalText" id="summernote"></div>
+        </form>
+    </div>
+</div>

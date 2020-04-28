@@ -1,0 +1,19 @@
+<div style="height: 85px; background: #fff; z-index: 200; display: flex; position: fixed; width: 100%;" class="header">
+    <div class="flex" flex="25" layout-align="left center"><md-button ng-href="./start"><md-icon>arrow_back</md-icon>back</md-button></div>
+    <div flex="50" class="flex" layout-align="center center"><span>PHOTOS</span></div>
+    <div class="flex" flex="25" layout-align="center center"></div>
+</div>
+
+<div class="flex-gt-xs-60 flex-offset-gt-xs-20" update-size="0" style="overflow-y: auto; overflow-x: hidden; margin-top: 100px;">
+    <div style="padding: 10px 10px 0 10px;" layout="column">
+        <md-button ng-click="vm.add()" style="width: 100px; margin: 0 0 20px;" class="md-raised"><span>New Item</span><md-icon>add</md-icon></md-button>
+        <md-list-item ng-href="{{'./items/' + item.id}}" style="align-items: center; display: flex; font-size: 20px;" class="md-2-line" ng-repeat="item in vm.items">
+            <div class="grid-item" flex="10"><img ng-if="item.file" ng-src="{{item.file}}" class="md-avatar" alt="{{item.name}}" /></div>
+            <div style="padding: 10px; border: none;" class="grid-item" flex="60"><span>{{item.name}}</span></div>
+            <div style="z-index: 9000;" class="flex" layout-align="center center" flex="20">
+                <md-icon ng-click="vm.delete(item)">delete</md-icon>
+            </div>
+            <md-divider></md-divider>
+        </md-list-item>
+    </div> 
+</div>

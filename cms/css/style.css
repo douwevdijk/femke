@@ -1,0 +1,112 @@
+
+html,
+body,
+md-content {
+  background-color: #f5f5f5 !important;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Poppins !important;
+}
+
+md-list-item.md-no-proxy.md-button, md-list-item .md-no-style.md-button {
+  line-height: 22px;
+}
+
+.user-link {
+  display: block;
+  width: 115px;
+  height: 25px;
+  background: #4E9CAF;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.bottom-sheet {
+  position: fixed;
+  background: #414042;
+  color: #FFFFFF;
+  height: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70;
+  font-weight: 900;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-transform: translate3d(0,80px,0);
+  transform: translate3d(0,80px,0);
+  transition: all .4s cubic-bezier(.25,.8,.25,1);
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform,-webkit-transform;
+}
+
+.items-grid .md-list-item-inner{
+  flex-direction: column;
+}
+
+.fade-in-load {
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s ease-in;
+  -moz-transition: opacity 0.4s ease-in;
+   -ms-transition: opacity 0.4s ease-in;
+    -o-transition: opacity 0.4s ease-in;
+       transition: opacity 0.4s ease-in;
+}
+
+.processing {
+  -webkit-transform: translate3d(0,0,0) !important;
+  transform: translate3d(0,0,0) !important;
+}
+
+.fade-in-load {
+  opacity: 0;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid-item {
+  border-right: 1px solid grey;
+}
+
+zg-search {
+  color: #000;
+}
+
+#data {
+  color: #000;
+}
+
+zing-grid {
+  border: none;
+  --zg-button-color: #000 !important;
+  --zg-button-font-size: 24px;
+  background: #eeeeee;
+  font-size: 16px;
+  padding: 0 10px 10px 10px;
+  font-family: fago;
+  display: block !important;
+}
+
+zg-caption {
+  background: #83AB20;
+  border-radius: 5px;
+}
+
+zg-head-cell {
+  font-size: 1.2rem;
+}
+
+zg-cell {
+  width: 450px;
+}

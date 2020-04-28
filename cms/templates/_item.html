@@ -1,0 +1,27 @@
+
+<div style="z-index: 500;" ng-class="{'processing': vm.processing}" class="bottom-sheet">One moment...</div><md-backdrop ng-if="vm.processing" class="md-sidenav-backdrop md-opaque md-default-theme md-sidenav-backdrop-custom disabled" ng-click="checkClosingForm()"></md-backdrop>
+
+<div style="height: 85px; background: #fff; z-index: 200; display: flex; position: fixed; width: 100%;" class="header">
+    <div class="flex" flex="25" layout-align="center center"><md-button ng-click="vm.back()" class="back-btn"><md-icon >arrow_back</md-icon>terug</md-button></div>
+    <div flex="50" class="flex" layout-align="center center"><span>{{vm.item.name}}</span></div>
+    <div flex="25" style="align-items: center;" class="flex"><md-button ng-click="vm.save()" style="width: 110px;" class="md-primary"><md-icon style="font-size: 34px; width: 34px; height: 34px;" >save</md-icon></md-button></div>
+</div>
+
+<div update-size="0" style="overflow-y: auto; overflow-x: hidden; margin-top: 85px;">
+    <div class="flex" layout-align="center center">
+        <form style="margin: 10px 0 30px 0;" class="flex-70" name="form">
+            <md-input-container style="margin-top: 30px;" class="md-block flex-50">
+                <label>Item Naam</label>
+                <input style="font-family: inherit;" type="text" ng-model="vm.item.name">
+            </md-input-container>
+            <label>Omschrijving</label>
+            <div summernote="vm.summernote" has-changed="vm.hasChanged" settings="vm.item.description" id="summernote"></div>
+            <img fade-in-load class="fade-in-load" style="max-width: 200px; margin: 25px 0 10px;" ng-src="{{vm.item.file}}" /> <br />
+            <md-button ng-class="{disabled: !loginForm.$valid}" style="margin: 0; padding: 0; overflow: hidden;" class="md-raised">
+                <input fileread="vm.file" style="opacity: 0; position: absolute;" type="file" accept="image/x-png,image/gif,image/jpeg" name="photo" id="file-1" />
+                <span>Upload</span>
+                <md-icon>arrow_upward</md-icon>
+            </md-button>
+        </form>
+    </div>
+</div>

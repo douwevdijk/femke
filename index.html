@@ -44,6 +44,21 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.0.7/rx.lite.compat.js"></script>
 
+      <script>
+
+        var config = {
+          apiKey: "AIzaSyD42H1mD-vUVPg-6OE6g22uiXjAZsoMKZ8",
+          databaseURL: 'https://im-ton-ramakers.firebaseio.com/',
+          storageBucket: 'gs://im-ton-ramakers.appspot.com/'
+        };
+
+        var root_db = firebase.initializeApp(config);
+        var dbService = firebase.database(root_db).ref();
+
+        var storage = firebase.storage().ref('/femke/')
+
+    </script>
+
  
   </head>
 

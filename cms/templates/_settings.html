@@ -1,0 +1,42 @@
+
+<div style="margin-top: 40px;" class="col-xs-8 col-xs-offset-2">
+    <div style="display: flex; justify-content: space-between;"><h3>Toekennen punten</h3><button ng-if="vm.userForm.$valid" class="md-button md-raised" ng-click="vm.addPoints()">Insert</button></div>
+    <md-content layout-padding>
+        <div>
+          <form name="vm.userForm">
+    
+            <div layout-gt-xs="row">
+              
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Team</label>
+                    <md-select required ng-model="vm.points.team">
+                      <md-option ng-repeat="team in vm.teams" value="{{team}}">
+                        {{team}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+    
+              <md-input-container>
+                <label>Punten</label>
+                <input required type="number" ng-model="vm.points.points">
+              </md-input-container>
+            </div>
+    
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Reden</label>
+                <input required ng-model="vm.points.reason">
+              </md-input-container>
+            </div>
+
+          </form>
+        </div>
+      </md-content>
+</div>
+
+<md-divider></md-divider>
+
+<div style="margin-top: 40px;" class="col-xs-8 col-xs-offset-2">
+    <div style="display: flex; justify-content: space-between;"><h3>Informatie text</h3><button class="md-button md-raised" ng-click="vm.saveInfo()">SAVE</button></div>
+    <div summernote="summernote" settings="vm.settings.infoText" id="summernote"></div>
+</div>

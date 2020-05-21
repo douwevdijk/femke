@@ -11,6 +11,66 @@ body {
     min-height: 100%;
 }
 
+.container {
+    width: 100%;
+}
+
+.afscheid-placeholder img {
+    max-width: 100%;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-box-pack: end;
+}
+
+.info div {
+    color: #fff;
+    font-family: Poppins;
+    font-size: 12px;
+    position: absolute;
+    padding: 0 10px 0 10px;
+}
+
+img {
+    border: 2px solid #fff;
+    border-radius: 4px;
+}
+
+.grid {
+    position: relative;
+    transition: opacity 0.8s linear 1s;
+}
+
+.item {
+    width: 250px !important;
+    position: absolute;
+    margin: 5px;
+    z-index: 1;
+}
+.item-content {
+    position: relative;
+
+}
+
+.flex {
+    display: flex;
+}
+
 ng-view {
     display: block;
 }
@@ -51,7 +111,8 @@ ng-view {
 }
 
 .img-head {
-    padding: 40px; 
+    padding: 40px;
+    min-height: 450px;
     position: relative;
 }
 

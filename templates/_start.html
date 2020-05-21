@@ -8,13 +8,22 @@
         </div>
     </div>
     <div ng-style="{'flex-direction': vm.media('gt-sm') && 'row' || 'column'}" style="display: flex;" class="flex-100">
-        <div ng-bind-html="::vm.settings.generalText" ng-style="{'border-right': vm.media('gt-sm') && '3px solid'}" style="padding: 0 25px 0 40px;" class="flex-xs-100 flex-sm-100 flex-gt-sm-60"></div>
-        <div style="display: flex; justify-content: center;" class="flex-100 flex-sm-100 flex-gt-sm-40">
-            <iframe src="https://open.spotify.com/embed/playlist/48Cz6Wy1D0xJ4NmVfMo3uW?si=lX_QcfWiRFGpIggffJmwug" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <div ng-bind-html="::$root.settings.generalText" ng-style="{'border-right': vm.media('gt-sm') && '3px solid'}" style="padding: 0 25px 0 40px;" class="flex-xs-100 flex-sm-100 flex-gt-sm-60"></div>
+        <div style="display: flex; justify-content: center; flex-direction: column;" class="flex-100 flex-sm-100 flex-gt-sm-40">
+            <div>
+                <ul>
+                    <li style="text-decoration: underline; "><a style="color: #000;" ng-href="/fotos">Foto's</a></li>
+                    <li style="text-decoration: underline; "><a style="color: #000;" ng-href="/afscheid">Afscheid</a></li>
+                    <li style="text-decoration: underline; "><a style="color: #000;" ng-href="/fotos">Pers</a></li>
+                </ul>
+            </div>
+            <div style="width: 100%; display: flex; justify-content: center;">
+                <iframe src="https://open.spotify.com/embed/playlist/48Cz6Wy1D0xJ4NmVfMo3uW?si=lX_QcfWiRFGpIggffJmwug" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
         </div>
     </div>
-    <div class="photo-strip flex-100">
+    <!--<div class="photo-strip flex-100">
         <img fade-in-load class="fade-in-load " ng-repeat="img in vm.photos" ng-src="{{img.file}}" /> 
     </div>
-    <span style="margin-left: 40px; font-size: 12px;"><i>Scroll naar rechts voor meer foto's</i></span>
+    <span style="margin-left: 40px; font-size: 12px;"><i>Scroll naar rechts voor meer foto's</i></span>-->
 </div>

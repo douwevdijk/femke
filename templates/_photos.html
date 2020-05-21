@@ -1,0 +1,28 @@
+<div style="height: 85px; display: flex; background: #fff; box-shadow: none; position: relative;">
+    <div class="flex" flex="25" layout-align="center center"><md-button style="font-weight: bold; color: #000;" ng-href="/" class="back-btn"><md-icon style="color: #000;" >arrow_back</md-icon>terug</md-button></div>
+    <div class="title flex" flex="50" layout-align="center center">Fotos</div>
+    <div class="flex" flex="25"></div>
+  </div>
+
+<div class="container">
+	<div class="grid"></div>
+</div>
+
+<script>
+
+    function updateMargin () {
+        var vw =  Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        var nItemsRow = Math.floor(vw/250);
+        var distance = ( ( vw-(nItemsRow*250) ) / 2 ) - ((nItemsRow-1) * 5) - 2;
+        $('.container').css('margin-left', distance)
+    }
+
+    $(document).ready(function() {
+        updateMargin();
+    });
+
+    $( window ).resize(function() {
+        updateMargin();
+    });
+
+</script>

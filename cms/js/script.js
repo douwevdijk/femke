@@ -51,6 +51,7 @@
 
                 $mdDialog.show(confirm).then(function() {
                   vm.settings.generalText = vm.summernote.summernote('code');
+                  vm.settings.afscheidText = vm.summernote_2nd.summernote('code');
                   vm.settings.$save();
                   $scope.$evalAsync( function () {
                     $location.path('/start');
@@ -70,6 +71,7 @@
 
             this.save = function () {
               vm.settings.infoText = vm.summernote.summernote('code');
+              vm.settings.afscheidText = vm.summernote_2nd.summernote('code');
               vm.hasChanged = false;
               vm.settings.$save();
             }
